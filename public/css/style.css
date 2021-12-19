@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+
+body {
+  background-color: #C14040;
+  font-family: 'Bree Serif', serif;
+}
+
+header {
+  background-color: azure;
+  padding: 0.2em;
+  border-radius: 20px;
+  margin: 1.5em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-link-container {
+  margin-right: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 20%;
+}
+
+.header-link {
+  color: #C14040;
+  background-color: #EED0D3;
+  font-size: 1.5em;
+  width: 40%;
+  height: 50%;
+  font-family: 'Bree Serif', serif;
+  border-radius: 10px;
+  border: 2px inset #C14040 ;
+  text-decoration: none;
+  text-align: center;
+}
+
+.header-button:hover {
+  cursor: pointer;
+}
+
+.title {
+  color: #C14040;
+  margin-left: 1em;
+}
+
+main {
+  margin: 1em;
+}
+
+.pokemon-list {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 0;
+  padding: 0;
+}
+
+.pokemon-link {
+  text-decoration: none;
+}
+.pokemon-card {
+  list-style: none;
+  background-color: #982C2C;
+  margin: 0.5em;
+  padding: 1em;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.pokemon-img {
+  width: 100%;
+}
+
+.pokemon-name {
+  color: #EED0D3;
+  font-size: 2em;
+}
+
+.subtitle {
+  text-align: center;
+  color: azure;
+  font-size: 3em;
+}
