@@ -3,7 +3,6 @@
 class Pokemon extends CoreModel
 {
   private $nom;
-  private $image;
   private $pv;
   private $attaque;
   private $defense;
@@ -68,6 +67,18 @@ class Pokemon extends CoreModel
     return $pokemonsForHome;
   }
 
+  public function findTypes(int $id)
+  {
+    $sql = "SELECT type.id, name, color FROM `type` 
+    INNER JOIN `pokemon_type` ON pokemon_type.type_id = type.id
+    INNER JOIN `pokemon` ON pokemon.numero = pokemon_type.pokemon_numero
+    WHERE pokemon.id = $id";
+    $pdo = Database::getPDO();
+    $pdoStatement = $pdo->query($sql);
+    $pokemonDetails = $pdoStatement->fetchAll();
+    return $pokemonDetails;
+  }
+
     /**
      * Get the value of name
      */ 
@@ -88,25 +99,6 @@ class Pokemon extends CoreModel
       return $this;
     }
     
-    /**
-     * Get the value of image
-     */ 
-    public function getImage()
-    {
-      return $this->image;
-    }
-
-    /**
-     * Set the value of image
-     *
-     * @return  self
-     */ 
-    public function setImage($image)
-    {
-      $this->image = $image;
-
-      return $this;
-    }
 
 
     /**
@@ -169,43 +161,44 @@ class Pokemon extends CoreModel
       return $this;
     }
 
+    
     /**
-     * Get the value of attaqueSpe
+     * Get the value of attaque_spe
      */ 
-    public function getAttaqueSpe()
+    public function getAttaque_spe()
     {
-      return $this->attaqueSpe;
+      return $this->attaque_spe;
     }
-
+  
     /**
-     * Set the value of attaqueSpe
+     * Set the value of attaque_spe
      *
      * @return  self
      */ 
-    public function setAttaqueSpe($attaqueSpe)
+    public function setAttaque_spe($attaque_spe)
     {
-      $this->attaqueSpe = $attaqueSpe;
-
+      $this->attaque_spe = $attaque_spe;
+  
       return $this;
     }
-
+    
     /**
-     * Get the value of defenseSpe
+     * Get the value of defense_spe
      */ 
-    public function getDefenseSpe()
+    public function getDefense_spe()
     {
-      return $this->defenseSpe;
+      return $this->defense_spe;
     }
-
+  
     /**
-     * Set the value of defenseSpe
+     * Set the value of defense_spe
      *
      * @return  self
      */ 
-    public function setDefenseSpe($defenseSpe)
+    public function setDefense_spe($defense_spe)
     {
-      $this->defenseSpe = $defenseSpe;
-
+      $this->defense_spe = $defense_spe;
+  
       return $this;
     }
 
@@ -248,4 +241,6 @@ class Pokemon extends CoreModel
 
       return $this;
     }
+
+
 }

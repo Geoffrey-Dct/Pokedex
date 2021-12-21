@@ -11,8 +11,8 @@ require __DIR__ . '/../app/Controllers/PokemonController.php';
 
 $router =  new AltoRouter();
 
-
-$router->setBasePath($_SERVER['BASE_URI']);
+// dd($_SERVER);
+// $router->setBasePath($_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
 // Notre route pour la home
 $router->map(
     // Méthode HTTP

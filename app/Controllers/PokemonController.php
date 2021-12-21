@@ -7,8 +7,10 @@ class PokemonController extends CoreController
     $pokemonId = $param['id'];
     $pokemonModel= new Pokemon();
     $pokemon = $pokemonModel->find($pokemonId);
+    $pokemonTypes = $pokemonModel->findTypes($pokemonId);
     $viewVars=[
-        'Pokemon'=> $pokemon
+        'Pokemon'=> $pokemon,
+        'PokemonTypes' => $pokemonTypes
     ];
     
     // On appelle la méthode qui affiche le template
