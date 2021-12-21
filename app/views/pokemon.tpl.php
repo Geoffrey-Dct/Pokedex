@@ -1,7 +1,7 @@
 <main>
   <h2 class="subtitle"><?=$viewVars['Pokemon']->getName()?> Details</h2>
   <div class="details-container">
-    <img src="<?="http://localhost:8080/img/" . $viewVars['Pokemon']->getNumero() . ".png"?>" alt="<?=$viewVars['Pokemon']->getName()?>" class="details-img">
+    <img src="<?=$absoluteURL . "/img/" . $viewVars['Pokemon']->getNumero() . ".png"?>" alt="<?=$viewVars['Pokemon']->getName()?>" class="details-img">
     <div class="details-card">
       <p class="details-card-subtitle details-name">#<?=$viewVars['Pokemon']->getNumero()?> <?=$viewVars['Pokemon']->getName()?></p>
       <ul class="details-card-types">
@@ -16,7 +16,6 @@
             <span class="details-card-value"><?=$viewVars['Pokemon']->getPv()?></span>
             <div class="progress-bar">
               <div class="progress-bar-left" style="width: <?=($viewVars['Pokemon']->getPv()* 100) / 255?>%"></div>
-              <div class="progress-bar-right"></div>
             </div>
           </li>
           <li class="details-card-list-item">
@@ -24,7 +23,6 @@
             <span class="details-card-value"><?=$viewVars['Pokemon']->getAttaque()?></span>
             <div class="progress-bar">
               <div class="progress-bar-left" style="width: <?=($viewVars['Pokemon']->getAttaque()* 100) / 255?>%"></div>
-              <div class="progress-bar-right"></div>
             </div>
           </li>
           <li class="details-card-list-item">
@@ -32,7 +30,6 @@
             <span class="details-card-value"><?=$viewVars['Pokemon']->getDefense()?></span>
             <div class="progress-bar">
               <div class="progress-bar-left" style="width: <?=($viewVars['Pokemon']->getDefense()* 100) / 255?>%"></div>
-              <div class="progress-bar-right"></div>
             </div>
           </li>
           <li class="details-card-list-item">
@@ -40,7 +37,6 @@
             <span class="details-card-value"><?=$viewVars['Pokemon']->getAttaque_spe()?></span>
             <div class="progress-bar">
               <div class="progress-bar-left" style="width: <?=($viewVars['Pokemon']->getAttaque_spe()* 100) / 255?>%"></div>
-              <div class="progress-bar-right"></div>
             </div>
           </li>
           <li class="details-card-list-item">
@@ -48,7 +44,6 @@
             <span class="details-card-value"><?=$viewVars['Pokemon']->getDefense_spe()?></span>
             <div class="progress-bar">
               <div class="progress-bar-left" style="width: <?=($viewVars['Pokemon']->getDefense_spe()* 100) / 255?>%"></div>
-              <div class="progress-bar-right"></div>
             </div>
           </li>
           <li class="details-card-list-item">

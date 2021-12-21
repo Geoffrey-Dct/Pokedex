@@ -9,10 +9,10 @@
 </head>
 <body>
   <header>
-    <h1 class="title">Pokédex</h1>
+    <h1 class="title">Pokedex</h1>
     <div class="header-link-container">
       <a href="<?=$router->generate('home')?>" class="header-link">List</a>
-      <a href="#" class="header-link">Types</a>
+      <a href="<?=$router->generate('types')?>" class="header-link">Types</a>
     </div>  
   </header>
   

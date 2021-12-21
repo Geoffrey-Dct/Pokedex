@@ -5,9 +5,11 @@ require __DIR__ . '/../vendor/autoload.php';
 require __DIR__ . '/../app/utils/Database.php';
 require __DIR__ . '/../app/Models/CoreModel.php';
 require __DIR__ . '/../app/Models/Pokemon.php';
+require __DIR__ . '/../app/Models/Type.php';
 require __DIR__ . '/../app/Controllers/CoreController.php';
 require __DIR__ . '/../app/Controllers/MainController.php';
 require __DIR__ . '/../app/Controllers/PokemonController.php';
+require __DIR__ . '/../app/Controllers/TypeController.php';
 
 $router =  new AltoRouter();
 
@@ -38,6 +40,25 @@ $router->map(
     'pokemon'
 );
 
+$router->map(
+    'GET',
+    '/types',
+    [
+        'controller' => 'MainController',
+        'method' => 'types',
+    ],
+    'types'
+);
+
+$router->map(
+    'GET',
+    '/type/[i:id]',
+    [
+        'controller' => 'TypeController',
+        'method' => 'read',
+    ],
+    'type'
+);
 
 $match=$router->match();
 

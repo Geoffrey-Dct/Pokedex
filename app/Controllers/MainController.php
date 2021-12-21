@@ -17,4 +17,15 @@ class MainController extends CoreController
         // On appelle la méthode qui affiche le template
         $this->show('home',$viewVars);
     }
+
+    public function types()
+    {
+        $typeModel= new Type();
+        $types = $typeModel->findAll();
+        $viewVars=[
+            'types' => $types
+        ];
+
+        $this->show('types',$viewVars);
+    }
  }

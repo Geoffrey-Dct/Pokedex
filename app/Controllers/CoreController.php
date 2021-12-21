@@ -6,8 +6,16 @@ class CoreController
     // Avec les données associées à ce template
     protected function show($viewName, $viewVars = [])
     {
-
-        $absoluteURL = $_SERVER['BASE_URI'];
+        function url(){
+            return sprintf(
+              "%s://%s",
+              isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off' ? 'https' : 'http',
+              $_SERVER['HTTP_HOST']
+            );
+          }
+          
+        // dd($_SERVER);
+        $absoluteURL = url();
         // On récupère notre variable $router créé "au niveau global de PHP" càd dans index.php
         global $router;      
                 
